@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="theme/theme1.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="d-flex">  <!--  flex-column-reverse flex-md-row -->
+        
+        <!-- Menu aside bar -->
+        <div id="menu-list" class="mini-menu bg-white menu-slide-in d-md-block">
+            <!-- Navigation -->
+            <div class="overflowScroll">
+                <div class="px-1 top-nav-bar bg-primary sticky-top" id="logobarDiv">
+                    <div class="d-flex align-items-center py-3">
+                        <div class="menu-icon">
+                            <img src="img/logo.svg" alt="">
+                        </div>
+                        <div class="menu-text d-none">
+                            <div class="ps-3">
+                                <span class="text-light">Waves Shop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <a href="dashboard.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1 current-page">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-house"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-bag"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Today Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-grid"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Recent Items</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="itemManage" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="add-item.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>New Item</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="item-list.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-list-task"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Item List</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="userManage" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Create User</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Manage Users</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-x"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Banned</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>User Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="inventory" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-plus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>New Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-spreadsheet"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>All Stocks</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-minus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Out of Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-bar-graph"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Stock Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="yourProfile" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Edit Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Log Out</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Home page -->
+        <div style="overflow-y: scroll; height: 100vh;">
+            <div class="bg-light position-relative flex-grow-1">
+                <!-- Navigation -->
+                <div class="sticky-top" id="nav-sticky-bar">
+                    <div class="py-3 p-0 top-nav-bar bg-primary">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-list h4 mb-0 px-2 text-light"></i>
+                                <input type="text" class="searchBox mx-1 mx-sm-2 bg-primary text-light" placeholder="Search Projects...">
+                            </div>
+                            <div class="d-flex align-items-center" style="cursor: pointer;">
+                                <i class="bi bi-bell h5 mb-0 mx-1 mx-sm-2 mx-lg-3 text-light"></i>
+                                <i class="h5 mb-0 mx-1 mx-sm-2 mx-lg-3" data-feather="mail" style="stroke: var(--light);"></i>
+                                <div class="dropdown ms-1 ms-sm-2 me-2 me-sm-3">
+                                    <div class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="img/user2.png" class="adminProfile mx-1" alt="">    
+                                        <span class="adminName d-none d-lg-inline text-light">William</span>
+                                    </div>
+                                    <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Contacts</a></li>
+                                    <li><a class="dropdown-item" href="#">Analytics</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Today Results -->
+                <div class="col-12 d-flex flex-wrap">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card bg-white mt-3 mx-3 mt-md-4 ms-md-3 me-md-2  my-lg-4 ms-lg-4 me-lg-2 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0">Sales Today</p>
+                                    <div class="result-icon bg-secondary" >
+                                        <i class="bi bi-truck text-white h6 mb-0"></i>
+                                    </div>
+                                </div>
+                                <p class="h4 mb-0 mt-3 text-primary counter-up">88</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card bg-white mt-3 mx-3 mt-md-4 ms-md-2 my-lg-4 mx-lg-2 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0">Today Earnings</p>
+                                    <div class="result-icon bg-secondary" >
+                                        <i class="bi bi-currency-dollar text-white h6 mb-0"></i>
+                                    </div>
+                                </div>
+                                <p class="h4 mb-0 mt-3 text-primary"><span class="counter-up">150,000</span> MMK</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card bg-white mt-3 mx-3 me-md-2  my-lg-4 mx-lg-2 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0">Visitors Today</p>
+                                    <div class="result-icon bg-secondary" >
+                                        <i class="text-white" data-feather="users" style="stroke: var(--light);"></i>
+                                    </div>
+                                </div>
+                                <p class="h4 mb-0 mt-3 text-primary counter-up">127</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card bg-white mt-3 mx-3 ms-md-2 me-lg-4 my-lg-4 ms-lg-2 me-lg-4 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0">Pending Orders</p>
+                                    <div class="result-icon bg-secondary" >
+                                        <i class="bi bi-cart2 text-white h6 mb-0"></i>
+                                    </div>
+                                </div>
+                                <p class="h4 mb-0 mt-3 text-primary counter-up">72</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart and carousel -->
+                <div class="d-flex align-items-end flex-wrap">
+                    <div class="col-12 col-lg-7">
+                        <div class="card mt-3 mt-lg-0 mx-3 mx-lg-4 mb-4 mb-md-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5>Orders & Viewers</h5>
+                                    <div>
+                                        <img class="userImg" src="img/user1.png" alt="">
+                                        <img class="userImg" src="img/user3.png" alt="">
+                                        <img class="userImg" src="img/user4.png" alt="">
+                                        <img class="userImg" src="img/user5.png" alt="">
+                                        <img class="userImg" src="img/user6.png" alt="">
+                                        <img class="userImg" src="img/user7.png" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <canvas id="orderViewer" height="150"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="card mt-3 mx-3 ms-md-3 me-md-2 ms-lg-0 me-md-3 me-lg-4 shadow-sm">
+                            <div class="card-body">
+                                <div id="carouselExampleIndicators" class="carousel carouselCard slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators" style="bottom: -25px">
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-dark" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="bg-dark"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class="bg-dark"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4" class="bg-dark"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5" class="bg-dark"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="mx-2">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <h3 class="mb-2">Coffee</h3>
+                                                        <p class="text-black-50 mb-3 mb-lg-4">500 MMK</p>
+                                                        <div class="mb-4 mt-2">
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-half h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star h5 text-secondary pe-1"></i>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/coffee.png" class="d-block productImg" alt="Coffee Cup">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="mx-2">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <h3 class="mb-2">Lemon</h3>
+                                                        <p class="text-black-50 mb-3 mb-lg-4">2000 MMK</p>
+                                                        <div class="mb-4 mt-2">
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star h5 text-secondary pe-1"></i>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/cocktail1.png" class="d-block productImg" alt="Lemon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="mx-2">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <h3 class="mb-2">Orange</h3>
+                                                        <p class="text-black-50 mb-3 mb-lg-4">2500 MMK</p>
+                                                        <div class="mb-4 mt-2">
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-half h5 text-secondary pe-1"></i>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/cocktail2.png" class="d-block productImg" alt="Orange">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="mx-2">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <h3 class="mb-2">Chocolate</h3>
+                                                        <p class="text-black-50 mb-3 mb-lg-4">1500 MMK</p>
+                                                        <div class="mb-4 mt-2">
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/cake1.png" class="d-block productImg" alt="Chocolate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="mx-2">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <h3 class="mb-2">Cupcake</h3>
+                                                        <p class="text-black-50 mb-3 mb-lg-4">1200 MMK</p>
+                                                        <div class="mb-4 mt-2">
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star-fill h5 text-secondary pe-1"></i>
+                                                            <i class="bi bi-star h5 text-secondary pe-1"></i>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/cake2.png" class="d-block productImg" alt="Cupcake">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="card mx-3 me-md-3 ms-md-2 mx-lg-4 mt-3 mt-xl-4 shadow-sm mb-lg-4">
+                            <div class="card-body">
+                                <h5 class="mb-3">Products by Weekly Sales</h5>
+                                <div>
+                                    <canvas id="productOrderChart" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <div class="card shadow-sm mb-4 mt-3 mt-lg-4 me-lg-4 mx-3 ms-lg-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5>Recent Orders</h5>
+                                    <div>
+                                        <i class="bi bi-arrow-clockwise h5 mb-0" style="cursor: pointer;"></i>
+                                        <i class="bi bi-arrow-up-right-square h5 mb-0 ms-2" style="cursor: pointer;"></i>
+                                    </div>
+                                </div>
+                                <table id="recent-orders" class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>SKU</th>
+                                            <th>Invoice#</th>
+                                            <th>Customer Name</th>
+                                            <th>Status</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PO-10521</td>
+                                            <td><a href="#">INV-001001</a></td>
+                                            <td>Elizabeth W.</td>
+                                            <td><span class="tag tag-default tag-success">Paid</span></td>
+                                            <td>3000 MMK</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PO-532521</td>
+                                            <td><a href="#">INV-01112</a></td>
+                                            <td>Doris R.</td>
+                                            <td><span class="tag tag-default tag-warning">Overdue</span></td>
+                                            <td>2000 MMK</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PO-05521</td>
+                                            <td><a href="#">INV-001012</a></td>
+                                            <td>Andrew D.</td>
+                                            <td><span class="tag tag-default tag-success">Paid</span></td>
+                                            <td>5500 MMK</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PO-15521</td>
+                                            <td><a href="#">INV-001401</a></td>
+                                            <td>Megan S.</td>
+                                            <td><span class="tag tag-default tag-success">Paid</span></td>
+                                            <td>8000 MMK</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PO-32521</td>
+                                            <td><a href="#">INV-008101</a></td>
+                                            <td>Walter R.</td>
+                                            <td><span class="tag tag-default tag-warning">Overdue</span></td>
+                                            <td>3500 MMK</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PO-420397</td>
+                                            <td><a href="#">INV-002510</a></td>
+                                            <td>Tommie R.</td>
+                                            <td><span class="tag tag-default tag-warning">Overdue</span></td>
+                                            <td>3000 MMK</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>     
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-3.6.0.min.js"></script>
+    <script src="node_modules/feather-icons/dist/feather.min.js"></script>
+    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter_up.js"></script>
+    <script src="node_modules/chart.js/dist/chart.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

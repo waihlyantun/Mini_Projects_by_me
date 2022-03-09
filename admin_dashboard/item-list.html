@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="theme/theme1.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .fullScreen {
+            width: 100%;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="d-flex">
+
+        <!-- Menu aside bar -->
+        <div class="mini-menu bg-white menu-slide-in d-md-block" id="menu-list">
+            <!-- Navigation -->
+            <div class="overflowScroll">
+                <div class="px-3 top-nav-bar bg-primary sticky-top">
+                    <div class="d-flex align-items-center py-3">
+                        <div class="menu-icon">
+                            <img src="img/logo.svg" alt="">
+                        </div>
+                        <div class="menu-text d-none">
+                            <div class="ps-3">
+                                <span class="text-light">Waves Shop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="dashboard.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-house"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-bag"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Today Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-grid"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Recent Items</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="itemManage" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="add-item.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>New Item</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="item-list.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1 current-page">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-list-task"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Item List</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="userManage" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Create User</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Manage Users</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-x"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Banned</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>User Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="inventory" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-plus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>New Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-spreadsheet"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>All Stocks</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-minus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Out of Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-bar-graph"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Stock Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="yourProfile" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Edit Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Log Out</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Home page -->
+        <div class="bg-light position-relative flex-grow-1">
+            <!-- Navigation -->
+            <div class="sticky-top" id="nav-sticky-bar">
+                <div class="py-3 p-0 top-nav-bar bg-primary">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-list h4 mb-0 px-2 text-light"></i>
+                            <input type="text" class="searchBox mx-1 mx-sm-2 bg-primary text-light" placeholder="Search Projects...">
+                        </div>
+                        <div class="d-flex align-items-center" style="cursor: pointer;">
+                            <i class="bi bi-bell h5 mb-0 mx-1 mx-sm-2 mx-lg-3 text-light"></i>
+                            <i class="h5 mb-0 mx-1 mx-sm-2 mx-lg-3" data-feather="mail" style="stroke: var(--light);"></i>
+                            <div class="dropdown ms-1 ms-sm-2 me-2 me-sm-3">
+                                <div class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="img/user2.png" class="adminProfile mx-1" alt="">    
+                                    <span class="adminName d-none d-lg-inline text-light">William</span>
+                                </div>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">View Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Contacts</a></li>
+                                  <li><a class="dropdown-item" href="#">Analytics</a></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="overflow-y: scroll; height: 90vh;" id="tableHeight">
+                <div class="col-12" id="breadcrumb">
+                    <div class="mx-4 mt-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a class="text-decoration-none" href="dashboard.html">Home</a></li>
+                            <li class="breadcrumb-item active"><a class="text-decoration-none" aria-current="page">List</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>     
+                <div class="col-12">
+                    <div class="card mx-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5>Item list</h5>
+                                <div class="d-flex align-items-center">
+                                    <a href="add-item.html">
+                                        <i class="bi bi-plus-circle-fill h4 mb-0 text-secondary mx-1" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Add Item" style="cursor: pointer;"></i>
+                                    </a>
+                                    <i id="changeSize" class="bi bi-box-arrow-up-right h5 mb-0 text-secondary mx-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Enter fullscreen" style="cursor: pointer;"></i>
+                                </div>
+                            </div>
+                            <hr class="text-secondary">
+                            <table id="list" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>2011/04/25</td>
+                                        <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrett Winters</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>63</td>
+                                        <td>2011/07/25</td>
+                                        <td>$170,750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>Junior Technical Author</td>
+                                        <td>San Francisco</td>
+                                        <td>66</td>
+                                        <td>2009/01/12</td>
+                                        <td>$86,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cedric Kelly</td>
+                                        <td>Senior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>22</td>
+                                        <td>2012/03/29</td>
+                                        <td>$433,060</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Airi Satou</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>33</td>
+                                        <td>2008/11/28</td>
+                                        <td>$162,700</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brielle Williamson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>New York</td>
+                                        <td>61</td>
+                                        <td>2012/12/02</td>
+                                        <td>$372,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Herrod Chandler</td>
+                                        <td>Sales Assistant</td>
+                                        <td>San Francisco</td>
+                                        <td>59</td>
+                                        <td>2012/08/06</td>
+                                        <td>$137,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rhona Davidson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>Tokyo</td>
+                                        <td>55</td>
+                                        <td>2010/10/14</td>
+                                        <td>$327,900</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Colleen Hurst</td>
+                                        <td>Javascript Developer</td>
+                                        <td>San Francisco</td>
+                                        <td>39</td>
+                                        <td>2009/09/15</td>
+                                        <td>$205,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sonya Frost</td>
+                                        <td>Software Engineer</td>
+                                        <td>Edinburgh</td>
+                                        <td>23</td>
+                                        <td>2008/12/13</td>
+                                        <td>$103,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jena Gaines</td>
+                                        <td>Office Manager</td>
+                                        <td>London</td>
+                                        <td>30</td>
+                                        <td>2008/12/19</td>
+                                        <td>$90,560</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quinn Flynn</td>
+                                        <td>Support Lead</td>
+                                        <td>Edinburgh</td>
+                                        <td>22</td>
+                                        <td>2013/03/03</td>
+                                        <td>$342,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Charde Marshall</td>
+                                        <td>Regional Director</td>
+                                        <td>San Francisco</td>
+                                        <td>36</td>
+                                        <td>2008/10/16</td>
+                                        <td>$470,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haley Kennedy</td>
+                                        <td>Senior Marketing Designer</td>
+                                        <td>London</td>
+                                        <td>43</td>
+                                        <td>2012/12/18</td>
+                                        <td>$313,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tatyana Fitzpatrick</td>
+                                        <td>Regional Director</td>
+                                        <td>London</td>
+                                        <td>19</td>
+                                        <td>2010/03/17</td>
+                                        <td>$385,750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Silva</td>
+                                        <td>Marketing Designer</td>
+                                        <td>London</td>
+                                        <td>66</td>
+                                        <td>2012/11/27</td>
+                                        <td>$198,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paul Byrd</td>
+                                        <td>Chief Financial Officer (CFO)</td>
+                                        <td>New York</td>
+                                        <td>64</td>
+                                        <td>2010/06/09</td>
+                                        <td>$725,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gloria Little</td>
+                                        <td>Systems Administrator</td>
+                                        <td>New York</td>
+                                        <td>59</td>
+                                        <td>2009/04/10</td>
+                                        <td>$237,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bradley Greer</td>
+                                        <td>Software Engineer</td>
+                                        <td>London</td>
+                                        <td>41</td>
+                                        <td>2012/10/13</td>
+                                        <td>$132,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dai Rios</td>
+                                        <td>Personnel Lead</td>
+                                        <td>Edinburgh</td>
+                                        <td>35</td>
+                                        <td>2012/09/26</td>
+                                        <td>$217,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenette Caldwell</td>
+                                        <td>Development Lead</td>
+                                        <td>New York</td>
+                                        <td>30</td>
+                                        <td>2011/09/03</td>
+                                        <td>$345,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yuri Berry</td>
+                                        <td>Chief Marketing Officer (CMO)</td>
+                                        <td>New York</td>
+                                        <td>40</td>
+                                        <td>2009/06/25</td>
+                                        <td>$675,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caesar Vance</td>
+                                        <td>Pre-Sales Support</td>
+                                        <td>New York</td>
+                                        <td>21</td>
+                                        <td>2011/12/12</td>
+                                        <td>$106,450</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Doris Wilder</td>
+                                        <td>Sales Assistant</td>
+                                        <td>Sydney</td>
+                                        <td>23</td>
+                                        <td>2010/09/20</td>
+                                        <td>$85,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Angelica Ramos</td>
+                                        <td>Chief Executive Officer (CEO)</td>
+                                        <td>London</td>
+                                        <td>47</td>
+                                        <td>2009/10/09</td>
+                                        <td>$1,200,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gavin Joyce</td>
+                                        <td>Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>42</td>
+                                        <td>2010/12/22</td>
+                                        <td>$92,575</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jennifer Chang</td>
+                                        <td>Regional Director</td>
+                                        <td>Singapore</td>
+                                        <td>28</td>
+                                        <td>2010/11/14</td>
+                                        <td>$357,650</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brenden Wagner</td>
+                                        <td>Software Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>28</td>
+                                        <td>2011/06/07</td>
+                                        <td>$206,850</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fiona Green</td>
+                                        <td>Chief Operating Officer (COO)</td>
+                                        <td>San Francisco</td>
+                                        <td>48</td>
+                                        <td>2010/03/11</td>
+                                        <td>$850,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shou Itou</td>
+                                        <td>Regional Marketing</td>
+                                        <td>Tokyo</td>
+                                        <td>20</td>
+                                        <td>2011/08/14</td>
+                                        <td>$163,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michelle House</td>
+                                        <td>Integration Specialist</td>
+                                        <td>Sydney</td>
+                                        <td>37</td>
+                                        <td>2011/06/02</td>
+                                        <td>$95,400</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Suki Burks</td>
+                                        <td>Developer</td>
+                                        <td>London</td>
+                                        <td>53</td>
+                                        <td>2009/10/22</td>
+                                        <td>$114,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prescott Bartlett</td>
+                                        <td>Technical Author</td>
+                                        <td>London</td>
+                                        <td>27</td>
+                                        <td>2011/05/07</td>
+                                        <td>$145,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gavin Cortez</td>
+                                        <td>Team Leader</td>
+                                        <td>San Francisco</td>
+                                        <td>22</td>
+                                        <td>2008/10/26</td>
+                                        <td>$235,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Martena Mccray</td>
+                                        <td>Post-Sales support</td>
+                                        <td>Edinburgh</td>
+                                        <td>46</td>
+                                        <td>2011/03/09</td>
+                                        <td>$324,050</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unity Butler</td>
+                                        <td>Marketing Designer</td>
+                                        <td>San Francisco</td>
+                                        <td>47</td>
+                                        <td>2009/12/09</td>
+                                        <td>$85,675</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Howard Hatfield</td>
+                                        <td>Office Manager</td>
+                                        <td>San Francisco</td>
+                                        <td>51</td>
+                                        <td>2008/12/16</td>
+                                        <td>$164,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hope Fuentes</td>
+                                        <td>Secretary</td>
+                                        <td>San Francisco</td>
+                                        <td>41</td>
+                                        <td>2010/02/12</td>
+                                        <td>$109,850</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vivian Harrell</td>
+                                        <td>Financial Controller</td>
+                                        <td>San Francisco</td>
+                                        <td>62</td>
+                                        <td>2009/02/14</td>
+                                        <td>$452,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Timothy Mooney</td>
+                                        <td>Office Manager</td>
+                                        <td>London</td>
+                                        <td>37</td>
+                                        <td>2008/12/11</td>
+                                        <td>$136,200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jackson Bradshaw</td>
+                                        <td>Director</td>
+                                        <td>New York</td>
+                                        <td>65</td>
+                                        <td>2008/09/26</td>
+                                        <td>$645,750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Olivia Liang</td>
+                                        <td>Support Engineer</td>
+                                        <td>Singapore</td>
+                                        <td>64</td>
+                                        <td>2011/02/03</td>
+                                        <td>$234,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bruno Nash</td>
+                                        <td>Software Engineer</td>
+                                        <td>London</td>
+                                        <td>38</td>
+                                        <td>2011/05/03</td>
+                                        <td>$163,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sakura Yamamoto</td>
+                                        <td>Support Engineer</td>
+                                        <td>Tokyo</td>
+                                        <td>37</td>
+                                        <td>2009/08/19</td>
+                                        <td>$139,575</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thor Walton</td>
+                                        <td>Developer</td>
+                                        <td>New York</td>
+                                        <td>61</td>
+                                        <td>2013/08/11</td>
+                                        <td>$98,540</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finn Camacho</td>
+                                        <td>Support Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>47</td>
+                                        <td>2009/07/07</td>
+                                        <td>$87,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Serge Baldwin</td>
+                                        <td>Data Coordinator</td>
+                                        <td>Singapore</td>
+                                        <td>64</td>
+                                        <td>2012/04/09</td>
+                                        <td>$138,575</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zenaida Frank</td>
+                                        <td>Software Engineer</td>
+                                        <td>New York</td>
+                                        <td>63</td>
+                                        <td>2010/01/04</td>
+                                        <td>$125,250</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zorita Serrano</td>
+                                        <td>Software Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>56</td>
+                                        <td>2012/06/01</td>
+                                        <td>$115,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jennifer Acosta</td>
+                                        <td>Junior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>43</td>
+                                        <td>2013/02/01</td>
+                                        <td>$75,650</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cara Stevens</td>
+                                        <td>Sales Assistant</td>
+                                        <td>New York</td>
+                                        <td>46</td>
+                                        <td>2011/12/06</td>
+                                        <td>$145,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hermione Butler</td>
+                                        <td>Regional Director</td>
+                                        <td>London</td>
+                                        <td>47</td>
+                                        <td>2011/03/21</td>
+                                        <td>$356,250</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lael Greer</td>
+                                        <td>Systems Administrator</td>
+                                        <td>London</td>
+                                        <td>21</td>
+                                        <td>2009/02/27</td>
+                                        <td>$103,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jonas Alexander</td>
+                                        <td>Developer</td>
+                                        <td>San Francisco</td>
+                                        <td>30</td>
+                                        <td>2010/07/14</td>
+                                        <td>$86,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shad Decker</td>
+                                        <td>Regional Director</td>
+                                        <td>Edinburgh</td>
+                                        <td>51</td>
+                                        <td>2008/11/13</td>
+                                        <td>$183,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Bruce</td>
+                                        <td>Javascript Developer</td>
+                                        <td>Singapore</td>
+                                        <td>29</td>
+                                        <td>2011/06/27</td>
+                                        <td>$183,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Donna Snider</td>
+                                        <td>Customer Support</td>
+                                        <td>New York</td>
+                                        <td>27</td>
+                                        <td>2011/01/25</td>
+                                        <td>$112,000</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-3.6.0.min.js"></script>
+    <script src="node_modules/feather-icons/dist/feather.min.js"></script>
+    <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#list').DataTable();
+        } );
+
+        $("#changeSize").click(function(){
+            $(this).closest(".card").toggleClass("fullScreen");
+            if ($(this).closest(".card").hasClass("fullScreen")) {
+                $(this).removeClass("bi-box-arrow-up-right");
+                $(this).addClass("bi-box-arrow-down-left");
+                $(this).attr("data-bs-content","Exit fullscreen");
+                $("#menu-list").addClass("d-md-none");
+                $("#nav-sticky-bar").addClass("d-none");
+                $("#breadcrumb").addClass("d-none");
+                $("#tableHeight").attr("style","overflow-y: scroll; height: 100vh;");
+            } else {
+                $(this).addClass("bi-box-arrow-up-right");
+                $(this).removeClass("bi-box-arrow-down-left");
+                $(this).attr("data-bs-content","Enter fullscreen");
+                $("#menu-list").removeClass("d-md-none");
+                $("#nav-sticky-bar").removeClass("d-none");
+                $("#breadcrumb").removeClass("d-none");
+                $("#tableHeight").attr("style","overflow-y: scroll; height: 90vh;");
+            };
+        });
+    </script>
+</body>
+</html>

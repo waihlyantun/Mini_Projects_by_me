@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="theme/theme1.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="d-flex">
+
+        <!-- Menu aside bar -->
+        <div id="menu-list" class="mini-menu bg-white menu-slide-in d-md-block">
+            <!-- Navigation -->
+            <div class="overflowScroll">
+                <div class="px-3 top-nav-bar bg-primary sticky-top">
+                    <div class="d-flex align-items-center py-3">
+                        <div class="menu-icon">
+                            <img src="img/logo.svg" alt="">
+                        </div>
+                        <div class="menu-text d-none">
+                            <div class="ps-3">
+                                <span class="text-light">Waves Shop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="dashboard.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-house"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-bag"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Today Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-grid"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Recent Items</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="itemManage" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="add-item.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1 current-page">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>New Item</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="item-list.html" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-list-task"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Item List</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="userManage" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Create User</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Manage Users</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-x"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Banned</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>User Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="inventory" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-plus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>New Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-spreadsheet"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>All Stocks</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-minus"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Out of Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-file-earmark-bar-graph"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Stock Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="side-menu-title pt-3 pb-1 title-icon" id="yourProfile" >
+                    <div class="side-menu d-flex align-items-center px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Edit Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="side-hyperlink">
+                    <div class="side-menu d-flex align-items-center py-2 px-1">
+                        <div class="menu-icon d-flex justify-content-center h5 mb-0">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </div>
+                        <div class="menu-text side-menu-text d-none">
+                            <div class="ps-2">
+                                <span>Log Out</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Home page -->
+        <div class="bg-light position-relative flex-grow-1 vh-100">
+            <!-- Navigation -->
+            <div class="sticky-top" id="nav-sticky-bar">
+                <div class="py-3 p-0 top-nav-bar bg-primary">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-list h4 mb-0 px-2 text-light"></i>
+                            <input type="text" class="searchBox mx-1 mx-sm-2 bg-primary text-light" placeholder="Search Projects...">
+                        </div>
+                        <div class="d-flex align-items-center" style="cursor: pointer;">
+                            <i class="bi bi-bell h5 mb-0 mx-1 mx-sm-2 mx-lg-3 text-light"></i>
+                            <i class="h5 mb-0 mx-1 mx-sm-2 mx-lg-3" data-feather="mail" style="stroke: var(--light);"></i>
+                            <div class="dropdown ms-1 ms-sm-2 me-2 me-sm-3">
+                                <div class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="img/user2.png" class="adminProfile mx-1" alt="">    
+                                    <span class="adminName d-none d-lg-inline text-light">William</span>
+                                </div>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">View Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Contacts</a></li>
+                                  <li><a class="dropdown-item" href="#">Analytics</a></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                  <div class="mx-4 mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a class="text-decoration-none" href="dashboard.html">Home</a></li>
+                          <li class="breadcrumb-item"><a class="text-decoration-none" href="item-list.html">List</a></li>
+                          <li class="breadcrumb-item active" class="text-decoration-none" aria-current="page">Add item</li>
+                        </ol>
+                      </nav>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="card mx-4 mt-md-4 mt-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Add Item</h5>
+                            <a href="item-list.html">
+                                <i class="bi bi-list-task h4 mb-0 text-secondary" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="List" style="cursor: pointer;"></i>
+                            </a>
+                        </div>
+                        <hr class="text-secondary">
+                        <div class="d-md-flex">
+                            <div class="col-12 col-md-6 pe-md-2">
+                                <label for="photoUpload">Photo Upload</label>
+                                <i class="bi bi-info-circle-fill text-secondary" data-bs-toggle="popover" data-bs-content="Only support jpg and png format"></i>
+                                <input type="file" class="form-control form-control-sm mb-2" id="photoUpload" required>
+    
+                                <label for="itemName">Item Name</label>
+                                <input type="text" class="form-control form-control-sm mb-2" id="itemName">
+    
+                                <label for="itemType">Item Type</label>
+                                <select name="itemType" id="itemType" class="form-control form-control-sm mb-2">
+                                    <option value="" selected disabled>Select Item Type</option>
+                                </select>
+    
+                                <label for="category">Category</label>
+                                <select name="category" id="category" class="form-control form-control-sm mb-2">
+                                    <option value="" selected disabled>Select Main Category</option>
+                                </select>
+    
+                                <label for="subCategory">Sub Category</label>
+                                <select name="subCategory" id="subCategory" class="form-control form-control-sm mb-2 mb-md-4">
+                                    <option value="" selected disabled>Select Sub Category</option>
+                                </select>
+                            </div>
+    
+                            <div class="col-12 col-md-6 ps-md-2">
+                                <div class="d-flex">
+                                    <div class="col-6 px-md-1">
+                                        <label for="quantity">Quantity</label>
+                                        <input type="text" id="quantity" class="form-control form-control-sm mb-2">
+                                    </div>
+                                    <div class="col-6 px-md-1 ps-3">
+                                        <label for="unit">Unit</label>
+                                        <select name="unit" id="unit" class="form-control form-control-sm mb-2">
+                                            <option value="x"></option>
+                                            <option value="y"></option>
+                                            <option value="z"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control form-control-sm mb-2" id="price">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" cols="30" rows="7" class="form-control form-control-sm mb-2"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-3.6.0.min.js"></script>
+    <script src="node_modules/feather-icons/dist/feather.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/add-item.js"></script>
+</body>
+</html>
